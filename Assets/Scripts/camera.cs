@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class camera : MonoBehaviour
 {
-    public float mousesenstivity = 0f;
-    float m_rotationY = 0.01f;
+    public float mousesenstivity = 100f;
+    private float rotationX;
     Transform player;
     // Start is called before the first frame update
     void Start()
@@ -21,13 +21,11 @@ public class camera : MonoBehaviour
     }
     private void Rotation()
     {
-        m_rotationY = Input.GetAxis("Mouse X") * mousesenstivity * Time.deltaTime;
-
+        float m_rotationY = Input.GetAxis("Mouse X") * mousesenstivity * Time.deltaTime;
+        float m_rotationX = Input.GetAxis("Mouse Y") * mousesenstivity * Time.deltaTime;
+        rotationX -= m_rotationX;
+        rotationX = Mathf.Clamp(rotationX, -50f, 40f);
+        transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         player.Rotate(Vector3.up * m_rotationY);
-    }
-    public Vector3 getforwardvector()
-    {
-        Quaternion roty = Quaternion.Euler(0, m_rotationY, 0);
-        return roty * Vector3.forward;
     }
 }
