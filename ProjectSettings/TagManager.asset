@@ -6,6 +6,9 @@ TagManager:
   tags:
   - DynamicObject
   - Interactable
+  - garbage
+  - extractor
+  - production
   layers:
   - Default
   - TransparentFX
