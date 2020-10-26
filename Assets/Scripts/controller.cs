@@ -50,6 +50,7 @@ public class controller : MonoBehaviour
         {
             if (hitt.transform.CompareTag("Interactable"))
             {
+                //garbage_animate(garbage)
                 view.GetComponent<MeshRenderer>().material.color = Color.red;
             }
             else
