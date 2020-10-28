@@ -298,7 +298,6 @@ GameObject:
   - component: {fileID: 2863664702925581316}
   - component: {fileID: 2863664702925581317}
   - component: {fileID: 2863664702925581319}
-  - component: {fileID: 2863664702925581318}
   m_Layer: 0
   m_Name: MainCharacter
   m_TagString: Untagged
@@ -372,16 +371,3 @@ MonoBehaviour:
   canHold: 1
   view: {fileID: 2863664702524876923}
   guide: {fileID: 2863664701800329367}
---- !u!65 &2863664702925581318
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2863664702925581315}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 0
-  serializedVersion: 2
-  m_Size: {x: 3, y: 1, z: 3}
-  m_Center: {x: 0, y: 1, z: 0}
