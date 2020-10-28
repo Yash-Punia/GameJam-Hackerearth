@@ -5,17 +5,15 @@ using UnityEngine;
 using UnityEngine.UI;
 public class controller : MonoBehaviour
 {
-    public float speed = 20f;
-    public Camera camera;
+    public float speed = 50f;
+    public Camera ccamera;
     public bool canHold = true;
     GameObject garbage;
     public GameObject view;
     public Transform guide;
-    private void Start()
-    {
-        //garbage = GameObject.FindGameObjectWithTag("Interactable");
-    }
-    void Update()
+    bool interactable = false;
+    bool thrown = false;
+    void FixedUpdate()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -26,35 +24,40 @@ public class controller : MonoBehaviour
 
     private void Throw_and_Drop()
     {
-        RaycastHit hit;
-        Ray ray = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(ray, out hit, 5) && canHold)
+        if (interactable && canHold)
         {
-            if (hit.transform.CompareTag("Interactable"))
-            {
-                garbage = hit.transform.gameObject;
-                Pickup(garbage);
-            }
+            thrown = false;
+            Pickup(garbage);
         }
         else
+        {
+            thrown = true;
+            Invoke("thrown_false", 1.5f);
             throw_drop(garbage);
+        }
         if (!canHold)
             garbage.transform.position = guide.position;
+    }
+    void thrown_false()
+    {
+        thrown = false;
     }
 
     private void gaze()
     {
         RaycastHit hitt;
-        Ray rayy = camera.ScreenPointToRay(Input.mousePosition);
-        if (Physics.Raycast(rayy, out hitt, 5) && canHold)
+        Ray rayy = ccamera.ScreenPointToRay(Input.mousePosition);
+        if (Physics.Raycast(rayy, out hitt, 10))
         {
-            if (hitt.transform.CompareTag("Interactable"))
+            if ((hitt.transform.CompareTag("garbage") || hitt.transform.CompareTag("element")) && canHold  && !thrown)
             {
-                //garbage_animate(garbage)
+                interactable = true;
+                garbage = hitt.transform.gameObject;
                 view.GetComponent<MeshRenderer>().material.color = Color.red;
             }
             else
             {
+                interactable = false;
                 view.GetComponent<MeshRenderer>().material.color = Color.white;
             }
         }
@@ -73,7 +76,7 @@ public class controller : MonoBehaviour
     {
         if (canHold) return;
         garbage.GetComponent<Rigidbody>().useGravity = true;
-        guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = camera.transform.forward * speed;
+        guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = ccamera.transform.forward * speed;
         guide.GetChild(0).parent = null;
         canHold = true;
     }

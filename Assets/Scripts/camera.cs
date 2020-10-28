@@ -24,7 +24,7 @@ public class camera : MonoBehaviour
         float m_rotationY = Input.GetAxis("Mouse X") * mousesenstivity * Time.deltaTime;
         float m_rotationX = Input.GetAxis("Mouse Y") * mousesenstivity * Time.deltaTime;
         rotationX -= m_rotationX;
-        rotationX = Mathf.Clamp(rotationX, -50f, 40f);
+        rotationX = Mathf.Clamp(rotationX, -80f, 70f);
         transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
         player.Rotate(Vector3.up * m_rotationY);
     }
