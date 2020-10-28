@@ -9,6 +9,7 @@ TagManager:
   - garbage
   - extractor
   - production
+  - element
   layers:
   - Default
   - TransparentFX

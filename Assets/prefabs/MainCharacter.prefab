@@ -366,8 +366,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1adcd99a5f9af5f4bae9b8c84e304666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
-  camera: {fileID: 2863664700949904914}
+  speed: 40
+  ccamera: {fileID: 2863664700949904914}
   canHold: 1
   view: {fileID: 2863664702524876923}
   guide: {fileID: 2863664701800329367}

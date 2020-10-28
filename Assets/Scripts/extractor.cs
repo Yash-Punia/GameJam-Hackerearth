@@ -12,6 +12,7 @@ public class extractor : MonoBehaviour
         if (other.gameObject.CompareTag("extractor"))
         {
             element_number = UnityEngine.Random.Range(1, 5);
+            other.gameObject.tag = "element";
             elements_product(element_number);
         }
         if (other.gameObject.tag == "production")
