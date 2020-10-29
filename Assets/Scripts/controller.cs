@@ -49,7 +49,7 @@ public class controller : MonoBehaviour
         Ray rayy = ccamera.ScreenPointToRay(Input.mousePosition);
         if (Physics.Raycast(rayy, out hitt, 10))
         {
-            if ((hitt.transform.CompareTag("garbage") || hitt.transform.CompareTag("element")) && canHold  && !thrown)
+            if ((hitt.transform.CompareTag("garbage") || hitt.transform.CompareTag("crushed") || hitt.transform.CompareTag("element")) && canHold  && !thrown)
             {
                 interactable = true;
                 garbage = hitt.transform.gameObject;

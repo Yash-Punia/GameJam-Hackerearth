@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6850995468719182691}
   m_Layer: 0
   m_Name: door
-  m_TagString: Untagged
+  m_TagString: final_product
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6e4d4ab6913dea4c9d997ed46beb944, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 800
 --- !u!54 &6850995468719182691
 Rigidbody:
   m_ObjectHideFlags: 0
