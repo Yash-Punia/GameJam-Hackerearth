@@ -19,11 +19,11 @@ public class production : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="garbage")
+        if(other.gameObject.tag=="element")
         {
             n++;
-            mul *= other.gameObject.GetComponent<extractor>().element_number;
-            if (other.gameObject.GetComponent<extractor>().element_number==2)
+            mul *= other.gameObject.GetComponent<element_>().element_number;
+            if (other.gameObject.GetComponent<element_>().element_number==2)
                 k++;
             if (n % 2 == 0)
                 final_product(mul);
@@ -49,7 +49,7 @@ public class production : MonoBehaviour
             case 2:
                 Debug.Log(mul);
                 Debug.Log("Gun");
-                Instantiate(final_products[0], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[0], pos.position, Quaternion.identity);
                 mul = 1;
                 k = 0;
                 //GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0);
@@ -57,7 +57,7 @@ public class production : MonoBehaviour
             case 3:
                 Debug.Log(mul);
                 Debug.Log("Car");
-                Instantiate(final_products[5], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[5], pos.position, Quaternion.identity);
                 mul = 1;
                 k = 0;
                 //GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0.5f, 0.2f);
@@ -71,7 +71,7 @@ public class production : MonoBehaviour
                 }
                 Debug.Log(mul);
                 Debug.Log("Laptop");
-                Instantiate(final_products[6], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[6], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0);
@@ -79,7 +79,7 @@ public class production : MonoBehaviour
             case 5:
                 Debug.Log(mul);
                 Debug.Log("Horse_Toy");
-                Instantiate(final_products[4], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[4], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
@@ -87,7 +87,7 @@ public class production : MonoBehaviour
             case 6:
                 Debug.Log(mul);
                 Debug.Log("Bottle");
-                Instantiate(final_products[2], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[2], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0, 0.5f, 0.5f);
@@ -95,7 +95,7 @@ public class production : MonoBehaviour
             case 8:
                 Debug.Log(mul);
                 Debug.Log("Microcontroller");
-                Instantiate(final_products[3], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[3], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(1, 0, 0);
@@ -103,7 +103,7 @@ public class production : MonoBehaviour
             case 10:
                 Debug.Log(mul);
                 Debug.Log("Almirah");
-                Instantiate(final_products[1], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[1], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0.5f, 0.5f, 0.2f);
@@ -111,7 +111,7 @@ public class production : MonoBehaviour
             case 12:
                 Debug.Log(mul);
                 Debug.Log("Mobile");
-                Instantiate(final_products[9], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[9], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0, 1, 0);
@@ -119,7 +119,7 @@ public class production : MonoBehaviour
             case 15:
                 Debug.Log(mul);
                 Debug.Log("Vase");
-                Instantiate(final_products[7], new Vector3(88.1f, 3, -13.33f), Quaternion.identity);
+                Instantiate(final_products[7], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0, 0, 1);
@@ -127,7 +127,7 @@ public class production : MonoBehaviour
             case 20:
                 Debug.Log(mul);
                 Debug.Log("Fancy Door");
-                Instantiate(final_products[8], new Vector3(88.1f, 3f, -13.33f), Quaternion.identity);
+                Instantiate(final_products[8], pos.position, Quaternion.identity);
                 k = 0;
                 mul = 1;
                 //GetComponent<MeshRenderer>().material.color = new Color(0, 0.5f, 0.5f);

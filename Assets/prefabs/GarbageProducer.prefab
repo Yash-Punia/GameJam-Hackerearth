@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2afa27fcb894d9d49977a857d8f7b0c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  garbagePrefab: {fileID: 7975939556549374279, guid: c3dfa868483401d4191c77cc62844ded,
+  garbagePrefab: {fileID: 8641984345191698245, guid: faf977a7a49f297449e85e75c77f4d37,
     type: 3}
   positionOfProduction: {fileID: 2901745461438867465}
   garbageParentHolder: {fileID: 0}

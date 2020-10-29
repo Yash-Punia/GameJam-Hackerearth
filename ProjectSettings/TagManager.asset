@@ -5,11 +5,14 @@ TagManager:
   serializedVersion: 2
   tags:
   - DynamicObject
-  - Interactable
   - garbage
   - extractor
   - production
   - element
+  - crushed
+  - cushed
+  - elementgenerator
+  - final_product
   layers:
   - Default
   - TransparentFX

@@ -1,31 +1,22 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
-public class extractor : MonoBehaviour
+public class element_ : MonoBehaviour
 {
+    //public GameObject crushed_obj;
     public int element_number;
-    public GameObject element;
-    public GameObject pos;
+    
     private void OnTriggerExit(Collider other)
     {
         if (other.gameObject.CompareTag("extractor"))
         {
-            element_number = UnityEngine.Random.Range(1, 5);
             elements_product(element_number);
         }
-        if(other.gameObject.CompareTag("elementgenerator"))
+        if (other.gameObject.tag == "production")
         {
-            Invoke("instantiate", 2);
+            Destroy(gameObject);
         }
-    }
-    void instantiate()
-    {
-        GameObject obj = Instantiate(element, pos.transform.position, Quaternion.identity);
-        obj.GetComponent<element_>().element_number = element_number;
-        Destroy(gameObject);
     }
     private void elements_product(int element)
     {
