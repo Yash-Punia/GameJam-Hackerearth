@@ -7,11 +7,15 @@ public class Player : MonoBehaviour
 {
     public CharacterController controller;
     camera cam;
-    [SerializeField] float speed = 6f;
+    [SerializeField] float minSpeed;
+    [SerializeField] float maxSpeed;
+
+    private float speed=0;  
 
     // Start is called before the first frame update
     void Start()
     {
+        speed = minSpeed;
         cam = GetComponent<camera>();   
     }
 
@@ -21,11 +25,11 @@ public class Player : MonoBehaviour
         HandleKeyboardInput();
         if(Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = 20f;
+            speed = maxSpeed;
         }
         if(Input.GetKeyUp(KeyCode.LeftShift))
         {
-            speed = 6f;
+            speed = minSpeed;
         }
         
     }
