@@ -53,12 +53,12 @@ public class controller : MonoBehaviour
             {
                 interactable = true;
                 garbage = hitt.transform.gameObject;
-                view.GetComponent<MeshRenderer>().material.color = Color.red;
+                //view.GetComponent<MeshRenderer>().material.color = Color.red;
             }
             else
             {
                 interactable = false;
-                view.GetComponent<MeshRenderer>().material.color = Color.white;
+                //view.GetComponent<MeshRenderer>().material.color = Color.white;
             }
         }
     }
