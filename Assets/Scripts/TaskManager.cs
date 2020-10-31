@@ -31,7 +31,7 @@ public class TaskManager : MonoBehaviour
     bool key = false;
     GUIStyle guistyle = new GUIStyle();
 
-    public int Count=0 ; 
+    public int Count = 0;
 
     private void OnGUI()
     {
@@ -57,22 +57,22 @@ public class TaskManager : MonoBehaviour
 
     private void Generate_Number()
     {
-        for(int i=0;i<3;i++)
+        for (int i = 0; i < 3; i++)
         {
             int rand = UnityEngine.Random.Range(1, 6);
-            if(rand==1)
+            if (rand == 1)
             {
                 ++iron;
             }
-            else if(rand==2)
+            else if (rand == 2)
             {
                 ++aluminium;
             }
-            else if(rand==3)
+            else if (rand == 3)
             {
                 ++plastic;
             }
-            else if(rand==4)
+            else if (rand == 4)
             {
                 ++silicon;
             }
@@ -113,7 +113,7 @@ public class TaskManager : MonoBehaviour
     {
         sliderval.value = time / maxtime;
         time -= Time.deltaTime;
-        if(time<=1)
+        if (time <= 1)
         {
             time = 0;
             tryagain.SetActive(true);
@@ -122,7 +122,7 @@ public class TaskManager : MonoBehaviour
     }
     private void Update()
     {
-        if((iron+wood+silicon+plastic+aluminium)==0 && !key)
+        if ((iron + wood + silicon + plastic + aluminium) == 0 && !key)
         {
             status = 1;
             Instantiate(product, pos.position, Quaternion.identity);

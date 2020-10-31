@@ -106,7 +106,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fed0d2faccf09634798f2289aba92977, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elements: []
-  Task_Manager: {fileID: 7618209024482956174, guid: 708385139c2b59f4c9f4e6fc33dff473,
-    type: 3}
-  pos: {fileID: 1609421185977530645, guid: bc7bd7056386fd14f85efb2b21c951cf, type: 3}
+  on: 0
+  final_products:
+  - {fileID: 4312717500047568286, guid: 0895cf3b8bde99f4eb397fd5bf18677c, type: 3}
+  - {fileID: 4789389070342013119, guid: c48d144b64a145543be917a490128fc4, type: 3}
+  - {fileID: 291146575304662067, guid: c594a22468ef8c148b7f57648be4a6b8, type: 3}
+  - {fileID: 4924433899740199227, guid: 05855edf53fdda349a5fab95a8d13858, type: 3}
+  - {fileID: 6670295642532717181, guid: f270e233616ec9f4cac7cc90ebaa4dcd, type: 3}
+  - {fileID: 2788104839146245877, guid: b3874ab3b5aee5c42955f92154d8fc0f, type: 3}
+  - {fileID: 3063547737318006003, guid: b9a89fb05d27670449e962082d37b176, type: 3}
+  - {fileID: 1743878111940063108, guid: f2eab6adf6879d54c84e5947569b5ada, type: 3}
+  - {fileID: 6870673812223175007, guid: e735ac3c1610d24428f2688ec1a10239, type: 3}
+  - {fileID: 1870567640764505279, guid: 97e7f97c7303b4a4f905e8ff1dc62cf9, type: 3}
+  pos: {fileID: 4450523525556188177, guid: 0f91751f3c90e8d4db31fa83703e2513, type: 3}

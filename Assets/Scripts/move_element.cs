@@ -11,6 +11,6 @@ public class move_element : MonoBehaviour
     void Start()
     {
         m_rigid = GetComponent<Rigidbody>();
-        m_rigid.AddForce(new Vector3(0, 0, -1) * speed);
+        m_rigid.AddForce(new Vector3(0, 0, 1) * speed);
     }
 }

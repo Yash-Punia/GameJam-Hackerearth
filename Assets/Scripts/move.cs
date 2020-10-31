@@ -12,7 +12,7 @@ public class move : MonoBehaviour
     void Start()
     {
         m_rigid = GetComponent<Rigidbody>();
-        m_rigid.AddForce(new Vector3(1, 0, 0) * speed);
+        m_rigid.AddForce(new Vector3(0, 0, -1) * speed);
     }
 
     // Update is called once per frame

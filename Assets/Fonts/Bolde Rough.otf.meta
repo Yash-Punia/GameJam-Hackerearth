@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: c78de1235bcb5904693f231e03689383
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: Bolde Rough
+  fontNames:
+  - Bolde Rough
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: c57e43462aa011744a5ee59f693a486e, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

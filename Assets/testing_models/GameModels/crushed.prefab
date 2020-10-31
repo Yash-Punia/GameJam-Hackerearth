@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8933135706315317801}
   - component: {fileID: 4683014152868911023}
   - component: {fileID: 1376223833477360901}
-  - component: {fileID: -8951400719799444169}
+  - component: {fileID: 3710934151354760254}
   m_Layer: 0
   m_Name: crushed
   m_TagString: crushed
@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   element_number: 0
   element: {fileID: 8933135706315317800, guid: 2b0a62a744943a847b0ad085ebe939bf, type: 3}
-  pos: {fileID: 2462692950774805589, guid: a3fbf6d0106f5954c98d5bbc1c94a852, type: 3}
+  pos: {fileID: 6980017815069891882, guid: a3fbf6d0106f5954c98d5bbc1c94a852, type: 3}
 --- !u!54 &1376223833477360901
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -127,7 +127,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
---- !u!114 &-8951400719799444169
+--- !u!114 &3710934151354760254
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -136,7 +136,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8933135706315317800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d6e4d4ab6913dea4c9d997ed46beb944, type: 3}
+  m_Script: {fileID: 11500000, guid: bbed451e6d555e94d916a257b4eab7aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 800
