@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class enterance_crusher : MonoBehaviour
 {
-    public GameObject garbage;
+    public int element_number;
+    public List<GameObject> crushedobject;
     public GameObject pos;
     private void OnTriggerEnter(Collider other)
     {
@@ -16,7 +17,39 @@ public class enterance_crusher : MonoBehaviour
     }
     void instantiate()
     {
-        Instantiate(garbage, pos.transform.position, Quaternion.identity);
-        //garbage.GetComponent<move>().addforce();
+        element_number = UnityEngine.Random.Range(1, 6);
+        elements_product(element_number);
+    }
+    private void elements_product(int element)
+    {
+        switch (element)
+        {
+            case 1:
+                Debug.Log("Iron");
+                GameObject obj= Instantiate(crushedobject[element_number - 1], pos.transform.position, Quaternion.identity);
+                obj.GetComponent<extractor>().element_number = element_number;
+                break;
+            case 2:
+                Debug.Log("Aluminium");
+                GameObject objj=Instantiate(crushedobject[element_number - 1], pos.transform.position, Quaternion.identity);
+                objj.GetComponent<extractor>().element_number = element_number;
+                break;
+            case 3:
+                Debug.Log("Plastic");
+                GameObject obje = Instantiate(crushedobject[element_number - 1], pos.transform.position, Quaternion.identity);
+                obje.GetComponent<extractor>().element_number = element_number;
+                break;
+            case 4:
+                Debug.Log("Silicon");
+                GameObject objec = Instantiate(crushedobject[element_number - 1], pos.transform.position, Quaternion.identity);
+                objec.GetComponent<extractor>().element_number = element_number;
+                break;
+            case 5:
+                Debug.Log("wood");
+                GameObject objr = Instantiate(crushedobject[element_number - 1], pos.transform.position, Quaternion.identity);
+                objr.GetComponent<extractor>().element_number = element_number;
+                break;
+        }
+
     }
 }

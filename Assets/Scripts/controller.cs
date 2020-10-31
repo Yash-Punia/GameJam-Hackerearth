@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.UI;
 public class controller : MonoBehaviour
 {
+    public List<AudioClip> clips;
     public float speed = 50f;
     public Camera ccamera;
     public bool canHold = true;
@@ -13,6 +14,10 @@ public class controller : MonoBehaviour
     public Transform guide;
     bool interactable = false;
     bool thrown = false;
+    void playaudio(AudioClip clip)
+    {
+        GetComponent<AudioSource>().PlayOneShot(clip);
+    }
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -26,6 +31,7 @@ public class controller : MonoBehaviour
     {
         if (interactable && canHold)
         {
+            playaudio(clips[0]);
             thrown = false;
             Pickup(garbage);
         }
@@ -75,6 +81,7 @@ public class controller : MonoBehaviour
     private void throw_drop(GameObject garbage)
     {
         if (canHold) return;
+        playaudio(clips[1]);
         garbage.GetComponent<Rigidbody>().useGravity = true;
         guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = (new Vector3(0, 0.35f, 0) + ccamera.transform.forward) * speed;
         guide.GetChild(0).parent = null;
