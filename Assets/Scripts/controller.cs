@@ -13,7 +13,7 @@ public class controller : MonoBehaviour
     public Transform guide;
     bool interactable = false;
     bool thrown = false;
-    void FixedUpdate()
+    void Update()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -76,7 +76,7 @@ public class controller : MonoBehaviour
     {
         if (canHold) return;
         garbage.GetComponent<Rigidbody>().useGravity = true;
-        guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = ccamera.transform.forward * speed;
+        guide.GetChild(0).gameObject.GetComponent<Rigidbody>().velocity = (new Vector3(0, 0.35f, 0) + ccamera.transform.forward) * speed;
         guide.GetChild(0).parent = null;
         canHold = true;
     }

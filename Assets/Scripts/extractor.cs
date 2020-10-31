@@ -13,7 +13,7 @@ public class extractor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("extractor"))
         {
-            element_number = UnityEngine.Random.Range(1, 5);
+            element_number = UnityEngine.Random.Range(1, 6);
             elements_product(element_number);
         }
         if(other.gameObject.CompareTag("elementgenerator"))
