@@ -67,7 +67,6 @@ public class TitleScreenManager : MonoBehaviour
     }
     public void LoadTitleScene()
     {
-        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
-        SceneManager.LoadScene("Updated_Title");
+      SceneManager.LoadScene("Updated_Title");
     }
 }

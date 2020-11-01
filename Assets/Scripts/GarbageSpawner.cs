@@ -4,12 +4,17 @@ using UnityEngine;
 
 public class GarbageSpawner : MonoBehaviour
 {
-    private int garbageQuantity = 250;
+    [SerializeField] int garbageQuantity = 250;
     [SerializeField] GameObject garbagePrefab;
     [SerializeField] Transform positionOfProduction;
     [SerializeField] GameObject garbageParentHolder;
+    [SerializeField] float value =1.5f;
     public float speedOfProduction = 0.3f;
     bool garbageRequired = true;
+    float time = 0.3f;
+    float currentTime = 0f;
+
+
 
     private void Update()
     {
@@ -27,12 +32,15 @@ public class GarbageSpawner : MonoBehaviour
             yield return new WaitForSeconds(speedOfProduction);
             if (garbageRequired)
             {
-                float positionX = Random.Range((float)(-1), (float)(1));
-                //float positionY = Random.Range((float)(-positionOfProduction.position.y - 0.5), (float)(positionOfProduction.position.y + 0.5));
-                Vector3 positionFinal = new Vector3(positionX + positionOfProduction.position.x,positionOfProduction.position.y + positionX, positionOfProduction.position.z + positionX);
-                GameObject garbage = Instantiate(garbagePrefab, positionFinal, Quaternion.identity);
-                garbage.transform.SetParent(garbageParentHolder.transform);
-                garbageQuantity--;
+                float positionX = Random.Range(-value, value);
+                Vector3 positionFinal = new Vector3(positionX*2 + positionOfProduction.position.x,positionOfProduction.position.y + positionX, positionOfProduction.position.z + positionX);
+                if (Time.time > currentTime)
+                {
+                    time = time + currentTime;
+                    GameObject garbage = Instantiate(garbagePrefab, positionFinal, Quaternion.identity);
+                    garbage.transform.SetParent(garbageParentHolder.transform);
+                    garbageQuantity--;
+                }
             }
 
         }

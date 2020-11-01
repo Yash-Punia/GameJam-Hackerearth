@@ -11,7 +11,7 @@ using TMPro;
 public class TaskManager : MonoBehaviour
 {
     public List<string> Tasks;
-    public float time = 500;
+    public float time = 400;
     float maxtime;
     public static int iron = 0;
     public static int aluminium = 0;
@@ -34,7 +34,7 @@ public class TaskManager : MonoBehaviour
     public int Count = 0;
 
     private void OnGUI()
-    {
+    {/*
         guistyle.fontSize = 25;
         guistyle.normal.textColor = Color.white;
         GUI.BeginGroup(new Rect(10, 10, 600, 150));
@@ -45,6 +45,16 @@ public class TaskManager : MonoBehaviour
         GUI.Label(new Rect(10, 100, 500, 30), "Wood : " + wood, guistyle);
         GUI.Label(new Rect(10, 125, 500, 30), "Time : " + (int)time, guistyle);
         GUI.Label(new Rect(10, 150, 500, 30), "Status : " + status, guistyle);
+        GUI.EndGroup();*/
+        guistyle.fontSize = 25;
+        guistyle.normal.textColor = Color.white;
+        GUI.BeginGroup(new Rect(10, 10, 600, 650));
+        GUI.Box(new Rect(60, 5, 140, 140), "Iron : " + iron, guistyle);
+        GUI.Label(new Rect(60, 50, 500, 30), "Aluminium : " + aluminium, guistyle);
+        GUI.Label(new Rect(60, 95, 500, 30), "Plastic : " + plastic, guistyle);
+        GUI.Label(new Rect(60, 140, 500, 30), "Silicon : " + silicon, guistyle);
+        GUI.Label(new Rect(60, 185, 500, 30), "Wood : " + wood, guistyle);
+        //GUI.Label(new Rect(60, 230, 500, 30), "Time : " + (int)time, guistyle);
         GUI.EndGroup();
     }
     private void Start()
@@ -53,6 +63,8 @@ public class TaskManager : MonoBehaviour
         completed.SetActive(false);
         tryagain.SetActive(false);
         Generate_Number();
+        for (int i = 0; i < 4; i++)
+            product[i].SetActive(false);
     }
 
     private void Generate_Number()
@@ -125,7 +137,7 @@ public class TaskManager : MonoBehaviour
         if ((iron + wood + silicon + plastic + aluminium) == 0 && !key)
         {
             status = 1;
-            Instantiate(product[Count], pos.position, Quaternion.identity);
+            product[Count].SetActive(true);
             key = true;
             Invoke("completecanvas", 1);
         }
@@ -141,10 +153,14 @@ public class TaskManager : MonoBehaviour
     }
     void scene_next()
     {
+        Count++;
+        if (Count==4)
+        {
+            SceneManager.LoadScene("WinScene");
+        }
         completed.SetActive(false);
         tryagain.SetActive(false);
         Generate_Number();
-        Count++;
         task.text = Tasks[Count];
         startingcanvas.SetActive(true);
         slider.SetActive(false);

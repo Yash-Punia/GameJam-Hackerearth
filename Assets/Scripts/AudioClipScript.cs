@@ -5,24 +5,21 @@ using UnityEngine;
 public class AudioClipScript : MonoBehaviour
 {
     private static AudioClipScript instance = null;
-    public static AudioClipScript Instance { get { return instance; } }
-
     void Awake()
     {
-        instance = this;
-        DontDestroyOnLoad(gameObject);
+        if (instance != null)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
     }
-
-    private void Start()
+    
+    public void ApllicationQuit()
     {
-        Play();
-    }
-    public void Play()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
-    }
-    public void Stop()
-    {
-        gameObject.GetComponent<AudioSource>().Play();
+        Application.Quit();
     }
 }

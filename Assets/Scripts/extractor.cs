@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.Experimental.GraphView;
+//using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 public class extractor : MonoBehaviour
@@ -13,6 +13,7 @@ public class extractor : MonoBehaviour
     {
         if (other.gameObject.CompareTag("elementgenerator"))
         {
+            FindObjectOfType<TutorialScreenManager>().ShowNextUI();
             Invoke("elementsproduct", 2);
         }
     }

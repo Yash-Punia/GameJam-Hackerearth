@@ -12,6 +12,7 @@ public class enterance_crusher : MonoBehaviour
         if(other.gameObject.tag=="garbage")
         {
             Destroy(other.gameObject);
+            FindObjectOfType<TutorialScreenManager>().ShowNextUI();
             Invoke("instantiate", 2);
         }
     }

@@ -9,9 +9,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Updated_Title.unity
     guid: 6c7dd5a932a84024a9145272b6dd8abf
   - enabled: 1
-    path: Assets/Scenes/Updated_main 1.unity
-    guid: 5d09bf1852c18414597c478603fce37e
+    path: Assets/Scenes/Main3.unity
+    guid: 015e0117242999942a7793c26ac70405
   - enabled: 1
     path: Assets/Scenes/Lose Scene.unity
     guid: efbbe2155c97d694d967e67346fb47f4
+  - enabled: 1
+    path: Assets/Scenes/WinScene.unity
+    guid: 2841cbbd669066a498788f94f8126311
   m_configObjects: {}

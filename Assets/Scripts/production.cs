@@ -15,6 +15,7 @@ public class production : MonoBehaviour
     {
         if (other.gameObject.tag == "element")
         {
+            FindObjectOfType<TutorialScreenManager>().AllUIText();
             elements = other.gameObject;
             element_num = other.gameObject.GetComponent<element_>().element_number;
             Task_Manager.GetComponent<TaskManager>().change_number(element_num);
