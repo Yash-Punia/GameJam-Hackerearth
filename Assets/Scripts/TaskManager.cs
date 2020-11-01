@@ -37,14 +37,13 @@ public class TaskManager : MonoBehaviour
     {
         guistyle.fontSize = 25;
         guistyle.normal.textColor = Color.white;
-        GUI.BeginGroup(new Rect(10, 10, 600, 150));
-        GUI.Box(new Rect(0, 0, 140, 140), "  Iron : " + iron, guistyle);
-        GUI.Label(new Rect(10, 25, 500, 30), "Aluminium : " + aluminium, guistyle);
-        GUI.Label(new Rect(10, 50, 500, 30), "Plastic : " + plastic, guistyle);
-        GUI.Label(new Rect(10, 75, 500, 30), "Silicon : " + silicon, guistyle);
-        GUI.Label(new Rect(10, 100, 500, 30), "Wood : " + wood, guistyle);
-        GUI.Label(new Rect(10, 125, 500, 30), "Time : " + (int)time, guistyle);
-        GUI.Label(new Rect(10, 150, 500, 30), "Status : " + status, guistyle);
+        GUI.BeginGroup(new Rect(10, 10, 600, 650));
+        GUI.Box(new Rect(60, 0, 140, 140), "Iron : " + iron, guistyle);
+        GUI.Label(new Rect(60, 40, 500, 30), "Aluminium : " + aluminium, guistyle);
+        GUI.Label(new Rect(60, 80, 500, 30), "Plastic : " + plastic, guistyle);
+        GUI.Label(new Rect(60, 120, 500, 30), "Silicon : " + silicon, guistyle);
+        GUI.Label(new Rect(60, 160, 500, 30), "Wood : " + wood, guistyle);
+        GUI.Label(new Rect(60, 205, 500, 30), "Time : " + (int)time, guistyle);
         GUI.EndGroup();
     }
     private void Start()
