@@ -27,9 +27,9 @@ public class GarbageSpawner : MonoBehaviour
             yield return new WaitForSeconds(speedOfProduction);
             if (garbageRequired)
             {
-                float positionX = Random.Range((float)(- 0.4), (float)(0.4));
+                float positionX = Random.Range((float)(-1), (float)(1));
                 //float positionY = Random.Range((float)(-positionOfProduction.position.y - 0.5), (float)(positionOfProduction.position.y + 0.5));
-                Vector3 positionFinal = new Vector3(positionX + positionOfProduction.position.x,positionOfProduction.position.y + positionX, positionOfProduction.position.z);
+                Vector3 positionFinal = new Vector3(positionX + positionOfProduction.position.x,positionOfProduction.position.y + positionX, positionOfProduction.position.z + positionX);
                 GameObject garbage = Instantiate(garbagePrefab, positionFinal, Quaternion.identity);
                 garbage.transform.SetParent(garbageParentHolder.transform);
                 garbageQuantity--;

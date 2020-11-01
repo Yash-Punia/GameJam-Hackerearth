@@ -60,7 +60,11 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
+<<<<<<< Updated upstream:Assets/Models/GameModels/Cube.prefab
   - {fileID: 4874126678125670354, guid: 60153f9446846694fa0c1154d3504baf, type: 3}
+=======
+  - {fileID: 2100000, guid: 36260d5aeacad824b9991f7d9fedbbda, type: 2}
+>>>>>>> Stashed changes:Assets/testing_models/GameModels/Cube.prefab
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

@@ -137,7 +137,7 @@ public class TaskManager : MonoBehaviour
     }
     void scene_restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene("Lose Scene");
     }
     void scene_next()
     {
