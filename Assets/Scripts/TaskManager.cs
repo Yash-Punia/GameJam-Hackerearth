@@ -19,7 +19,7 @@ public class TaskManager : MonoBehaviour
     public static int silicon = 0;
     public static int wood = 0;
     public static int status = 0;
-    public GameObject product;
+    public List<GameObject> product;
     public GameObject slider;
     public Slider sliderval;
     public TextMeshProUGUI task;
@@ -125,7 +125,7 @@ public class TaskManager : MonoBehaviour
         if ((iron + wood + silicon + plastic + aluminium) == 0 && !key)
         {
             status = 1;
-            Instantiate(product, pos.position, Quaternion.identity);
+            Instantiate(product[Count], pos.position, Quaternion.identity);
             key = true;
             Invoke("completecanvas", 1);
         }
@@ -149,10 +149,11 @@ public class TaskManager : MonoBehaviour
         startingcanvas.SetActive(true);
         slider.SetActive(false);
         Invoke("TurnOff", 2);
-        time = 200;
+        time = 400;
         completed.SetActive(false);
         tryagain.SetActive(false);
         Generate_Number();
+        key = false;
     }
     void TurnOff()
     {
