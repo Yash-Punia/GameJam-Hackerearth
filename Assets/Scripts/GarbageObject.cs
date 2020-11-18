@@ -49,12 +49,12 @@ public class GarbageObject : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
+    private void Update()
     {
         if(movePos1)
         {
             //transform.position = Vector3.MoveTowards(startPosition1.position, endPosition1.position, 2 * Time.fixedDeltaTime);
-            transform.position += new Vector3(0f, 0f, 2f) * Time.fixedDeltaTime;
+            transform.position += new Vector3(0f, 0f, 2f) * Time.deltaTime;
             if(transform.position.z >= endPosition1.position.z)
             {
                 movePos1 = false;
@@ -62,7 +62,7 @@ public class GarbageObject : MonoBehaviour
         }
         if (movePos2)
         {
-            transform.position += new Vector3(0f, 0f, 2f) * Time.fixedDeltaTime;
+            transform.position += new Vector3(0f, 0f, 2f) * Time.deltaTime;
             if (transform.position.z >= endPosition2.position.z)
             {
                 movePos2 = false;
@@ -70,7 +70,7 @@ public class GarbageObject : MonoBehaviour
         }
         if (movePos3)
         {
-            transform.position += new Vector3(0f, 0f, 2f) * Time.fixedDeltaTime;
+            transform.position += new Vector3(0f, 0f, 2f) * Time.deltaTime;
             if (transform.position.z >= endPosition3.position.z)
             {
                 movePos3 = false;
@@ -79,35 +79,22 @@ public class GarbageObject : MonoBehaviour
     }
     private void garbageMovementManager()
     {
-        StartCoroutine(ProcessDelay());
-        IEnumerator ProcessDelay()
-        {
-            yield return new WaitForSeconds(0.5f);
-            GameObject newObject = gameManager.CrushedGarbageInstantiator(garbageInfoNumber);
-            Debug.Log(newObject.name);
-            movePos1 = true;
-        }
+        StartCoroutine(ProcessDelay(value => movePos1 = value));
     }
     private void extractorMovementManager()
     {
-        StartCoroutine(ProcessDelay());
-        IEnumerator ProcessDelay()
-        {
-            yield return new WaitForSeconds(0.5f);
-            GameObject newObject = gameManager.CrushedGarbageInstantiator(garbageInfoNumber);
-            Debug.Log(newObject.name);
-            movePos2 = true;
-        }
+        StartCoroutine(ProcessDelay(value => movePos2 = value));
     }
     private void productionMovementManager()
     {
-        StartCoroutine(ProcessDelay());
-        IEnumerator ProcessDelay()
-        {
-            yield return new WaitForSeconds(0.5f);
-            GameObject newObject = gameManager.CrushedGarbageInstantiator(garbageInfoNumber);
-            Debug.Log(newObject.name);
-            movePos3 = true;
-        }
+        StartCoroutine(ProcessDelay(value => movePos3 = value));
+    }
+    
+    IEnumerator ProcessDelay(Action<bool> action)
+    {
+        yield return new WaitForSeconds(0.5f);
+        GameObject newObject = gameManager.CrushedGarbageInstantiator(garbageInfoNumber);
+        Debug.Log(newObject.name);
+        action(true)
     }
 }
